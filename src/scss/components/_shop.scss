@@ -1,0 +1,670 @@
+.shop {
+  position: relative;
+
+  min-height: 1200px;
+
+  @include big-desktop {
+    min-height: 1100px;
+  }
+
+  @include small-tablet {
+    min-height: 976px;
+  }
+
+  &:before {
+    position: absolute;
+    content: url(../img/shop-bg-2.png);
+
+    left: 0;
+    top: 59px;
+
+    @include small-desktop {
+      content: url(../img/shop-bg-1_05x.svg);
+
+      left: 60px;
+    }
+
+    @include bg-mobile {
+      top: 25px;
+      left: 21px;
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    line-height: 140px;
+
+    width: max-content;
+
+    padding-left: 108px;
+
+    margin-bottom: 33px;
+
+    &:before {
+      position: absolute;
+      content: url(../img/surf-section-divide.svg);
+
+      top: -71px;
+      right: 0;
+
+      @include bg-mobile {
+        top: -60px;
+      }
+    }
+
+    @include small-desktop {
+      padding-left: 0;
+
+      margin-bottom: 0;
+    }
+
+    @include bg-mobile {
+      line-height: 70px;
+    }
+  }
+
+  &-navigation {
+    position: absolute;
+
+    top: 0;
+    right: 80px;
+
+    gap: 20px;
+
+    z-index: 10;
+
+    @include small-tablet {
+      right: 30px;
+    }
+
+    @include bg-mobile {
+      top: 45px;
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    left: 0;
+
+    min-height: 1100px;
+
+    width: 100%;
+
+    padding-top: 18px;
+
+    @include big-desktop {
+      min-height: 1000px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    left: 194px;
+    bottom: 20px;
+
+    @include small-desktop {
+      left: 180px;
+      bottom: 20px;
+    }
+
+    @include small-tablet {
+      left: 130px;
+    }
+  }
+}
+
+.shop-slide {
+  position: relative;
+
+  min-height: 1100px;
+  width: 100%;
+
+  @include big-desktop {
+    min-height: 1000px;
+  }
+
+  &__image {
+    width: 1098px;
+
+    object-fit: cover;
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    opacity: .95;
+
+    padding-top: 50px;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__left {
+    position: absolute;
+    left: 133px;
+
+    padding-top: 151px;
+
+    @include small-desktop {
+      left: 66px;
+
+      padding-top: 130px;
+    }
+
+    @include small-tablet {
+      padding-top: 55px;
+    }
+
+    @include bg-mobile {
+      left: 20px;
+
+      padding-top: 40px;
+    }
+  }
+
+  &__caption {
+    margin: 0 0 14px;
+
+    color: var(--light-color);
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 7.333px;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    opacity: .5;
+
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: url(../img/travel-line.svg);
+
+      top: -8px;
+      left: 119px;
+
+      @include small-tablet {
+        top: -6px;
+        left: 94px;
+      }
+
+      @include bg-mobile {
+        display: none;
+      }
+    }
+
+    @include small-desktop {
+      font-size: 18px;
+    }
+  }
+
+  &__text {
+    display: block;
+
+    margin-bottom: 70px;
+
+    color: var(--light-color);
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+
+    hyphens: auto;
+
+    max-width: 481px;
+
+    @include small-desktop {
+      font-size: 34px;
+
+      max-width: 479px;
+    }
+
+    @include small-tablet {
+      font-size: 28px;
+
+      max-width: 386px;
+
+      margin-bottom: 149px;
+    }
+
+    @include bg-mobile {
+      font-size: 24px;
+      line-height: 32px;
+
+      max-width: 200px;
+
+      margin-bottom: 95px;
+    }
+  }
+
+  &__rating {
+    position: relative;
+
+    margin-bottom: 85px;
+
+    @include small-tablet {
+      margin-bottom: 99px;
+    }
+
+    @include bg-mobile {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__pic {
+    position: absolute;
+
+    top: -43px;
+    left: -15px;
+  }
+
+  &__price {
+    color: var(--light-color);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+
+    display: block;
+
+    padding-top: 4px;
+  }
+
+  &__coins {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 40px;
+
+    position: relative;
+    left: 5px;
+    bottom: 9px;
+  }
+
+  &__drop {
+    color: var(--light-color);
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 36px;
+    text-transform: uppercase;
+    word-spacing: 27px;
+
+    position: relative;
+
+    width: max-content;
+
+    transition: opacity .3s ease-in-out;
+
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      content: url(../img/surf-card-dash.svg);
+
+      width: 20px;
+      height: 1px;
+
+      top: -12px;
+      left: 114px;
+
+      z-index: 2;
+
+      @include small-desktop {
+        left: 99px;
+      }
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: url(../img/shop-rect.svg);
+
+      right: -58px;
+      bottom: -26px;
+
+      z-index: -1;
+
+      @include small-desktop {
+        right: -60px;
+      }
+
+      @include small-tablet {
+        content: url(../img/shop-rect_05x.svg);
+        right: -56px;
+        bottom: -17px;
+      }
+    }
+
+    @include small-desktop {
+      font-size: 36px;
+    }
+
+    @include small-tablet {
+      font-size: 32px;
+      word-spacing: normal;
+
+      gap: 14px;
+    }
+
+    @include hover {
+      opacity: .8;
+    }
+  }
+
+  &__picture {
+    position: relative;
+
+    width: 228px;
+    height: 695px;
+
+    left: 53.1%;
+    transform: translateX(-49.3%);
+
+    @include small-tablet {
+      top: 50px;
+      left: 69%;
+    }
+
+    @include bg-mobile {
+      top: 88px;
+      left: 83%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+
+    width: 228px;
+    height: 695px;
+
+    @include small-tablet {
+      width: 185px;
+      height: 563px;
+    }
+
+    @include bg-mobile {
+      width: 155px;
+      height: 470px;
+    }
+  }
+
+  &__extras {
+    position: absolute;
+    top: 432px;
+    right: 58px;
+
+    min-width: 350px;
+
+    @include small-desktop {
+      right: 18px;
+    }
+
+    @include tablet {
+      right: -1px;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 28px;
+
+    color: var(--light-color);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    gap: 57px;
+
+    @include tablet {
+      gap: 25px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: 5px;
+  }
+
+  &__logo {
+    &--one {
+      width: 106px;
+      height: 108px;
+
+      margin-bottom: 35px;
+
+      @include tablet {
+        width: 89px;
+        height: 90px;
+      }
+    }
+
+    &--two {
+      padding-top: 15px;
+
+      width: 120px;
+      height: 81px;
+
+      margin-bottom: 45px;
+      margin-left: -10px;
+
+      @include tablet {
+        width: 107px;
+        height: 71px;
+
+        margin-bottom: 39px;
+      }
+    }
+  }
+
+  &__heading {
+    display: block;
+
+    color: var(--light-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+    margin-left: -3px;
+
+    opacity: .5;
+  }
+
+  &__cost {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+}
+
+.shop-point {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 203px;
+  right: 36px;
+
+  z-index: 5;
+
+  @include bg-mobile {
+    top: 203px;
+    right: 66px;
+  }
+
+  &:nth-child(2) {
+    top: 296px;
+    left: -6px;
+
+    @include bg-mobile {
+      top: 138px;
+      left: -2px;
+    }
+  }
+
+  &:nth-child(3) {
+    top: 611px;
+    left: 52px;
+
+    @include small-tablet {
+      top: 495px;
+      left: 43px;
+    }
+
+    @include bg-mobile {
+      top: 411px;
+      left: 35px;
+    }
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+
+    position: absolute;
+    left: 0;
+
+    cursor: pointer;
+
+    &:hover {
+      content: url(../img/shop-minus.svg);
+    }
+
+    &:hover ~ .shop-point__line {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &:hover ~ .shop-point__info {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @include small-tablet {
+      left: -2px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    top: -4px;
+    left: 27px;
+
+    min-width: 80px;
+    height: 1px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity .5s ease-in-out;
+  }
+
+  &__info {
+    min-width: 255px;
+
+    position: absolute;
+    top: -15px;
+    left: 131px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity .5s ease-in-out;
+
+    @include small-tablet {
+      min-width: 150px;
+    }
+  }
+
+  &__descr {
+    margin: 0;
+
+    color: var(--light-color);
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    @include small-tablet {
+      font-size: 18px;
+    }
+  }
+}
+
+.shop-slide__picture > .shop-point:nth-child(2) > .shop-point__line, .shop-slide__picture > .shop-point:nth-child(3) > .shop-point__line {
+  left: -95px;
+}
+
+.shop-slide__picture > .shop-point:nth-child(2) > .shop-point__info, .shop-slide__picture > .shop-point:nth-child(3) > .shop-point__info {
+  left: -380px;
+  top: -20px;
+
+  max-width: 280px;
+
+  @include big-desktop {
+    left: 140px;
+  }
+}
+
+.shop-slide__picture > .shop-point:nth-child(3) > .shop-point__info {
+  @include big-desktop {
+    left: -380px;
+  }
+
+  @include small-tablet {
+    max-width: 150px;
+
+    left: -260px;
+  }
+}
+
+.shop-slide__list > .shop-slide__item:nth-child(2) > .shop-slide__heading {
+  margin-bottom: 7px;
+}
+
+.shop-slide__picture > .shop-point:nth-child(2) > .shop-point__line {
+  @include big-desktop {
+    left: 30px;
+  }
+}
+
+.shop-slide__picture > .shop-point:last-child > .shop-point__line {
+  @include small-tablet {
+    left: -95px;
+  }
+}
+
+.shop-slide__picture > .shop-point:last-child > .shop-point__info {
+  @include small-tablet {
+    left: -260px;
+
+    max-width: 150px;
+  }
+}
+
+.shop-slide__picture > .shop-point:nth-child(2) > .shop-point__info {
+  @include small-tablet {
+    left: 136px;
+    top: -11px;
+  }
+}

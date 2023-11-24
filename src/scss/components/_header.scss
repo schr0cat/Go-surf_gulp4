@@ -1,0 +1,208 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  max-width: 168px;
+  min-height: 1024px;
+
+  background-image: url(../img/header-rect.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 168px 181px;
+
+  border-right: 1px solid #ffffff25;
+
+  z-index: 5;
+
+  @include big-desktop {
+    max-height: 856px;
+    min-height: 0;
+  }
+
+  @include small-tablet {
+    min-height: 783px;
+  }
+
+  @include bg-mobile {
+    min-height: auto;
+  }
+
+  &__container {
+    padding: 23px 42px 45px;
+
+    align-items: center;
+
+    @include bg-mobile {
+      padding: 23px 20px;
+    }
+  }
+
+  &__logo {
+    position: relative;
+
+    width: 43px;
+    height: 255px;
+
+    margin-bottom: 120px;
+
+    @include big-desktop {
+      margin-bottom: 40px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 310px;
+    }
+
+    @include bg-mobile {
+      margin-bottom: 205px;
+    }
+
+    &:before {
+      position: absolute;
+      content: url(../img/go-surf-logo.svg);
+
+      left: -59px;
+      top: -22px;
+
+      width: 467px;
+      height: 312px;
+
+      user-select: none;
+
+      @include bg-mobile {
+        content: url(../img/go-surf-logo_05x.png);
+
+        width: auto;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: url(../img/dash.svg);
+
+      width: 1px;
+      height: 20px;
+
+      bottom: 88px;
+
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__search {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/search.svg);
+    background-size: 24px 24px;
+
+    width: 24px;
+    height: 24px;
+
+    border: none;
+
+    cursor: pointer;
+
+    margin-bottom: 31px;
+
+    transition: .3s ease-in-out opacity;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      opacity: .75;
+    }
+
+    &:active {
+      background-color: #ffffff25;
+    }
+
+    @include big-desktop {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__date {
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 30px;
+
+    @include big-desktop {
+      margin-bottom: 15px;
+
+      gap: 0;
+    }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+  }
+
+  &__dash {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px; /* 118.75% */
+    letter-spacing: 1.4px;
+
+    padding: 0 5px;
+  }
+
+  &__day {
+    color: var(--light-color);
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 64px;
+    text-transform: uppercase;
+
+    @include big-desktop {
+      font-size: 48px;
+    }
+  }
+
+  &__month-year {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 1.4px;
+  }
+
+  &__address {
+    position: relative;
+
+    color: var(--light-color);
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 14px;
+    letter-spacing: 1.05px;
+
+    padding-left: 17px;
+
+    &:before {
+      position: absolute;
+      content: url(../img/location.svg);
+
+      width: 11px;
+      height: 14px;
+
+      left: -2px;
+      top: 1px;
+    }
+  }
+}
+
+.header__search.focus-visible {
+  outline: 1px solid var(--aquamarine-color);
+  outline-offset: 3px;
+}

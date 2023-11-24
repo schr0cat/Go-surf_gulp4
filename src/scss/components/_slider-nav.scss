@@ -1,0 +1,52 @@
+.slider-navigation {
+  user-select: none;
+
+  z-index: 15;
+
+  &__btn {
+    width: 24px;
+    height: 20px;
+
+    transition: .3s ease-in-out opacity;
+
+    img, svg {
+      display: block;
+
+      width: 24px;
+      height: 20px;
+
+      fill: var(--light-color);
+
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      opacity: .75;
+    }
+  }
+}
+
+.swiper-button-disabled {
+  opacity: .25;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include hover {
+    opacity: .25;
+  }
+}
+
+.slider-navigation__btn.focus-visible {
+  outline: 1px solid var(--aquamarine-color);
+  outline-offset: 3px;
+}
+
+.swiper-button-disabled.focus-visible {
+  outline: none;
+}

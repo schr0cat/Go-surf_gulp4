@@ -1,0 +1,1169 @@
+.surf {
+  padding-top: 160px;
+
+  @include big-desktop {
+    padding-top: 80px;
+  }
+
+  @include bg-mobile {
+    padding-top: 60px;
+  }
+
+  &__top {
+    position: relative;
+
+    min-height: 930px;
+
+    grid-template-columns: 432px 1fr 490px;
+    grid-template-areas:
+    "surf-title . surf-location"
+    ". surf-map .";
+
+    margin-bottom: 60px;
+
+    @include big-desktop {
+      min-height: 839px;
+    }
+
+    @include small-desktop {
+      grid-template-columns: 310px 1fr 490px;
+    }
+
+    @include small-tablet {
+      grid-template-columns: 220px 1fr 440px;
+
+      margin-bottom: 0;
+    }
+
+    @include bg-mobile {
+      grid-template-columns: 1fr 1fr;
+
+      grid-template-areas:
+      "surf-title surf-location"
+      ". surf-map .";
+
+      min-height: 545px;
+    }
+
+    &:before {
+      position: absolute;
+      content: url(../img/surf-section-logo.svg);
+
+      left: 0;
+      top: 33px;
+
+      @include small-desktop {
+        content: url(../img/surf-section-logo_05x.svg);
+      }
+
+      @include bg-mobile {
+        content: url(../img/surf-section-logo_025x.svg);
+
+        left: -25px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: url(../img/surf-section-location.svg);
+
+      right: 0;
+      top: 59px;
+
+      @include medium-desktop {
+        content: url(../img/surf-section-location_05x.svg);
+      }
+
+      @include bg-mobile {
+        content: url(../img/surf-section-location_025x.svg);
+
+        top: 115px;
+      }
+    }
+  }
+
+  &__title {
+    grid-area: surf-title;
+    justify-self: end;
+
+    margin: 0;
+
+    color: var(--light-color);
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 90px;
+    text-transform: uppercase;
+
+    position: relative;
+
+    width: fit-content;
+
+    &:before {
+      position: absolute;
+      content: url(../img/surf-section-divide.svg);
+
+      top: -71px;
+      right: 0;
+
+      @include bg-mobile {
+        top: -60px;
+      }
+    }
+
+    @include small-tablet {
+      font-size: 64px;
+    }
+
+    @include bg-mobile {
+      padding-left: 20px;
+    }
+  }
+
+  &__location {
+    grid-area: surf-location;
+
+    flex-direction: column;
+
+    max-width: 417px;
+
+    padding-top: 149px;
+
+    @include small-desktop {
+      padding-top: 104px;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+
+    margin: 0;
+
+    color: var(--light-color);
+    text-align: right;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 7.333px;
+    text-transform: uppercase;
+
+    opacity: .5;
+
+    &:before {
+      position: absolute;
+      content: url(../img/hero-line.svg);
+
+      left: 0;
+      top: -8px;
+
+      @include small-desktop {
+        left: 45px;
+      }
+
+      @include small-tablet {
+        content: url(../img/hero-line_05x.svg);
+
+        top: -6px;
+        left: 88px;
+      }
+
+      @include bg-mobile {
+        display: none;
+      }
+    }
+
+    @include small-desktop {
+      font-size: 18px;
+    }
+
+    @include bg-mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__descr {
+    color: var(--light-color);
+    text-align: right;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 68px;
+    text-transform: uppercase;
+
+    padding-right: 7px;
+
+    &--line {
+      font-weight: 250;
+    }
+
+    @include small-desktop {
+      font-size: 36px;
+    }
+
+    @include small-tablet {
+      line-height: 50px;
+    }
+
+    @include bg-mobile {
+      font-size: 30px;
+    }
+  }
+
+  &__map {
+    position: absolute;
+
+    top: 207px;
+
+    width: 1400px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    &:before {
+      position: absolute;
+      content: url(../img/surf-map-location.svg);
+
+      top: 312px;
+      left: 194px;
+    }
+
+    &:after {
+      position: absolute;
+      content: url(../img/surf-coordinates.svg);
+
+      top: 219px;
+      right: -44px;
+
+      @include bg-mobile {
+        content: url(../img/surf-coordinates_05x.svg);
+      }
+    }
+
+    @include big-desktop {
+      &:before {
+        top: 268px;
+        left: 238px;
+
+        @include bg-mobile {
+          display: none;
+        }
+      }
+
+      &:after {
+        top: 171px;
+        right: 56px;
+
+        @include small-desktop {
+          top: 117px;
+          right: 36px;
+        }
+
+        @include small-tablet {
+          top: 52px;
+          right: 60px
+        }
+
+        @include bg-mobile {
+          top: 10px;
+          right: 65px;
+        }
+      }
+    }
+
+    @include medium-desktop {
+      width: 1300px;
+    }
+
+    @include small-desktop {
+      width: 1130px;
+    }
+
+    @include small-tablet {
+      width: 864px;
+    }
+
+    @include bg-mobile {
+      width: 540px;
+
+      top: 220px;
+    }
+  }
+
+  &__image {
+    width: 1600px;
+
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    @include big-desktop {
+      top: 0;
+      left: 74px;
+
+      width: 1200px;
+      height: 634px;
+
+      transform: none;
+    }
+
+    @include medium-desktop {
+      width: 1050px;
+      height: 534px;
+    }
+
+    @include small-desktop {
+      width: 980px;
+      height: 500px;
+    }
+
+    @include small-tablet {
+      width: 726px;
+      height: 384px;
+    }
+
+    @include bg-mobile {
+      width: 432px;
+      height: 229px;
+    }
+  }
+
+  &__list {
+    position: relative;
+  }
+
+  &__item {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    cursor: pointer;
+
+    @include bg-mobile {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      width: 25px;
+    }
+
+    &:hover > .surf-info {
+      visibility: visible;
+      opacity: 1;
+
+      @include bg-mobile {
+        display: none;
+      }
+    }
+
+    &--one {
+      top: 386px;
+      left: -13px;
+    }
+
+    &--two {
+      top: 341px;
+      left: 158px;
+    }
+
+    &--three {
+      top: 374px;
+      left: 387px;
+    }
+
+    &--four {
+      top: 584px;
+      left: 479px;
+    }
+
+    &--five {
+      top: 253px;
+      left: 623px;
+    }
+
+    &--six {
+      top: 653px;
+      left: 743px;
+    }
+
+    &--seven {
+      top: 454px;
+      left: 944px;
+    }
+
+    &--eight {
+      top: 579px;
+      left: 1268px;
+    }
+
+    @include big-desktop {
+      &--one {
+        top: 330px;
+        left: 59px;
+      }
+
+      &--two {
+        top: 290px;
+        left: 208px;
+      }
+
+      &--three {
+        top: 318px;
+        left: 410px;
+      }
+
+      &--four {
+        top: 501px;
+        left: 485px;
+      }
+
+      &--five {
+        top: 212px;
+        left: 602px;
+      }
+
+      &--six {
+        top: 555px;
+        left: 709px;
+      }
+
+      &--seven {
+        top: 395px;
+        left: 870px;
+      }
+
+      &--eight {
+        top: 501px;
+        left: 1161px;
+      }
+    }
+
+    @include medium-desktop {
+      &--one {
+        top: 280px;
+      }
+
+      &--two {
+        left: 227px;
+      }
+
+      &--three {
+        top: 261px;
+        left: 369px;
+      }
+
+      &--four {
+        top: 435px;
+        left: 437px;
+      }
+
+      &--five {
+        top: 176px;
+        left: 538px;
+      }
+
+      &--six {
+        top: 479px;
+        left: 632px;
+      }
+
+      &--seven {
+        top: 334px;
+        left: 776px;
+      }
+
+      &--eight {
+        top: 433px;
+        left: 1032px;
+      }
+    }
+
+    @include big-desktop {
+      &--one {
+        top: 266px;
+      }
+
+      &--two {
+        left: 174px;
+        top: 230px;
+      }
+
+      &--three {
+        top: 242px;
+        left: 350px;
+      }
+
+      &--four {
+        top: 400px;
+        left: 415px;
+      }
+
+      &--five {
+        top: 164px;
+        left: 501px
+      }
+
+      &--six {
+        top: 443px;
+        left: 599px;
+      }
+
+      &--seven {
+        top: 308px;
+        left: 720px;
+      }
+
+      &--eight {
+        top: 405px;
+        left: 965px;
+      }
+    }
+
+    @include small-tablet {
+      &--one {
+        top: 204px;
+      }
+
+      &--two {
+        top: 175px;
+        left: 141px;
+      }
+
+      &--three {
+        top: 181px;
+        left: 275px;
+      }
+
+      &--four {
+        top: 304px;
+        left: 325px;
+      }
+
+      &--five {
+        top: 125px;
+        left: 385px;
+
+      }
+
+      &--six {
+        top: 338px;
+        left: 458px;
+      }
+
+      &--seven {
+        top: 237px;
+        left: 550px;
+      }
+
+      &--eight {
+        top: 306px;
+        left: 730px;
+      }
+    }
+
+    @include bg-mobile {
+      &--one {
+        top: 125px;
+        left: 65px;
+      }
+
+      &--two {
+        top: 105px;
+        left: 110px;
+      }
+
+      &--three {
+        top: 105px;
+        left: 193px;
+      }
+
+      &--four {
+        top: 179px;
+        left: 224px;
+      }
+
+      &--five {
+        top: 71px;
+        left: 256px;
+      }
+
+      &--six {
+        top: 201px;
+        left: 306px;
+      }
+
+      &--seven {
+        top: 141px;
+        left: 355px;
+      }
+
+      &--eight {
+        top: 184px;
+        left: 464px;
+      }
+    }
+  }
+
+  &__icon {
+    fill: var(--aquamarine-color);
+    filter: drop-shadow(0 0 20px rgba(74, 246, 205, 0.84));
+
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      content: url(../img/surf-map-location-active.svg);
+
+      width: 25px;
+      height: 34px;
+
+      @include bg-mobile {
+        content: '';
+
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &:hover ~ .surf-info {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @include bg-mobile {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.surf-info {
+  margin-bottom: 50px;
+
+  min-width: 283px;
+  max-width: 283px;
+
+  max-height: 216px;
+
+  box-sizing: border-box;
+
+  padding: 28px 32px 31px;
+
+  border-radius: 6px;
+
+  background: rgba(15, 16, 16, 0.7);
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  position: absolute;
+
+  left: 50%;
+
+  transform: translate(-50%, -210px);
+
+  transition: opacity .5s ease-in-out;
+
+  &:hover ~ .surf__icon {
+    content: url(../img/surf-map-location-active.svg);
+    width: 25px;
+    height: 34px;
+  }
+
+  &__top {
+    gap: 90px;
+
+    margin-bottom: 9px;
+  }
+
+  &__headline {
+    margin: 0;
+
+    white-space: nowrap;
+
+    color: var(--light-color);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    padding-left: 6px;
+  }
+
+  &__btn {
+    width: 16px;
+    height: 13px;
+
+    align-self: flex-start;
+    padding-top: 1px;
+
+    img {
+      width: 16px;
+      height: 13px;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 13px;
+
+    fill: var(--light-color);
+  }
+
+  &__descr {
+    width: 80px;
+
+    display: block;
+
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 11px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid var(--aquamarine-color);
+
+    margin-bottom: 33px;
+
+    padding-left: 3px;
+  }
+
+  &__list {
+    gap: 37px;
+
+    padding-left: 12px;
+  }
+
+  &__item {
+    flex-direction: column;
+
+    max-width: 59px;
+  }
+
+  &__image {
+    margin-bottom: 6px;
+  }
+
+  &__value {
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 23px;
+    white-space: nowrap;
+
+    &--one {
+      letter-spacing: -1.4px;
+    }
+  }
+
+  &__text {
+    color: var(--light-color);
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 12px;
+    text-transform: uppercase;
+  }
+}
+
+.surf__bottom {
+  padding: 0 100px;
+
+  @include big-desktop {
+    padding: 0;
+  }
+}
+
+.surf-card {
+  max-height: 750px;
+
+  padding-top: 77px;
+  padding-bottom: 345px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  background-color: hsla(180, 8%, 12%, 0.851);
+
+  cursor: pointer;
+
+  @include big-desktop {
+    max-height: 650px;
+
+    padding-bottom: 300px;
+  }
+
+  @include bg-mobile {
+    max-height: 485px;
+    min-height: 380px;
+  }
+
+  &--active {
+    background-color: hsla(180, 8%, 12%, 0.315);
+
+    &:after {
+      position: absolute;
+      content: url(../img/surf-card-rect.svg);
+
+      height: 80px;
+
+      bottom: 1px;
+      left: 154px;
+
+      z-index: 0;
+
+      @include big-desktop {
+        content: url(../img/surf-card-rect_bd.svg);
+
+        left: 130px;
+      }
+
+      @include small-tablet {
+        content: url(../img/surf-card-rect_bd_05x.svg);
+
+        bottom: -11px;
+        left: 114px;
+      }
+
+      @include bg-mobile {
+        left: 155px;
+      }
+    }
+
+    & > .surf-card__bottom {
+      opacity: 1;
+    }
+  }
+
+  @include tablet {
+    padding-bottom: 200px;
+  }
+
+  @include small-tablet {
+    padding-top: 20px;
+    padding-bottom: 90px;
+  }
+
+  &--one {
+    background-image: url(../img/surf-card-1.jpg);
+  }
+
+  &--two {
+    background-image: url(../img/surf-card-2.jpg);
+  }
+
+  &--three {
+    background-image: url(../img/surf-card-3.jpg);
+  }
+
+  &--four {
+    background-image: url(../img/surf-card-4.jpg);
+  }
+
+  &__title {
+    color: var(--light-color);
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 37px;
+    text-transform: uppercase;
+
+    padding-left: 40px;
+    padding-right: 200px;
+
+    margin: 0 0 254px;
+
+    background: none;
+
+    &:after {
+      content: '';
+    }
+
+    @include small-tablet {
+      font-size: 34px;
+    }
+
+    @include bg-mobile {
+      padding-right: 0;
+    }
+  }
+
+  &__descr {
+    color: var(--light-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+    transform: rotate(-90deg);
+
+    display: block;
+
+    position: absolute;
+
+    left: -146px;
+    bottom: 313px;
+
+    background: none;
+
+    width: 100%;
+
+    &:nth-child(even) {
+      left: 50px;
+    }
+
+    &:after {
+      content: '';
+
+      position: static;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &__divide {
+    font-weight: 250;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+
+    margin-bottom: 21px;
+
+    gap: 16px;
+
+    padding-left: 45px;
+
+    margin-top: 140px;
+
+    opacity: 0;
+
+    @include big-desktop {
+      margin-top: 0;
+    }
+
+    @include small-tablet {
+      gap: 8px;
+    }
+
+    @include bg-mobile {
+      justify-content: center;
+
+      padding-left: 0;
+    }
+  }
+
+  &__text {
+    color: var(--light-color);
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 36px;
+    text-transform: uppercase;
+    word-spacing: 28px;
+
+    position: relative;
+
+    z-index: 1;
+
+    &:before {
+      position: absolute;
+      content: url(../img/surf-card-dash.svg);
+
+      bottom: 14px;
+      left: 99px;
+
+      @include big-desktop {
+        bottom: 11px;
+        left: 77px;
+      }
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    @include big-desktop {
+      font-size: 32px;
+      word-spacing: 20px;
+    }
+
+    @include small-tablet {
+      font-size: 30px;
+      word-spacing: normal;
+    }
+  }
+
+  &__btn {
+    width: 24px;
+    height: 20px;
+
+    z-index: 1;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include small-tablet {
+      width: 20px;
+      height: 16px;
+    }
+  }
+
+  &__icon {
+    fill: var(--light-color);
+
+    width: 24px;
+    height: 20px;
+  }
+}
+
+.surf-cards__slider {
+  padding-top: 65px;
+  padding-bottom: 320px;
+
+  @include big-desktop {
+    padding-bottom: 220px;
+  }
+
+  @include bg-mobile {
+    padding: 45px 40px 100px;
+  }
+}
+
+.surf-cards__slide:nth-child(odd) {
+  min-width: 390px;
+  max-width: 390px;
+
+  @include big-desktop {
+    min-width: 340px;
+    max-width: 340px;
+  }
+
+  @include small-tablet {
+    min-width: 281px;
+  }
+
+  @include bg-mobile {
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+.surf-cards__slide:nth-child(even) {
+  margin-left: -40px;
+
+  min-width: 400px;
+  max-width: 400px;
+
+  position: relative;
+  bottom: 32px;
+
+  @include big-desktop {
+    min-width: 350px;
+    max-width: 350px;
+  }
+
+  @include small-tablet {
+    min-width: 290px;
+  }
+
+  @include bg-mobile {
+    min-width: auto;
+    max-width: none;
+
+    margin-left: 0;
+
+    bottom: 0;
+  }
+}
+
+.surf-cards__slide:nth-child(3n) {
+  top: 57px;
+
+  margin-left: -50px;
+
+  .surf-card__descr {
+    bottom: 266px;
+    left: -145px;
+
+    @include tablet {
+      bottom: 217px;
+    }
+  }
+
+  @include bg-mobile {
+    top: 0;
+
+    margin-left: 0;
+  }
+}
+
+.surf-cards__slide:nth-child(5n) {
+  margin-left: -50px;
+
+  @include bg-mobile {
+    margin-left: 0;
+  }
+}
+
+.surf-card--odd > .surf-card__descr {
+  left: -146px;
+  bottom: 265px;
+}
+
+.surf-card--even > .surf-card__descr {
+  left: -151px;
+  bottom: 270px;
+
+  @include tablet {
+    bottom: 237px;
+  }
+
+  @include small-tablet {
+    bottom: 175px;
+    left: -112px;
+
+    font-size: 12px;
+  }
+}
+
+.surf-navigation {
+  justify-content: end;
+  gap: 20px;
+
+  padding-right: 80px;
+
+  @include small-tablet {
+    padding-right: 30px;
+  }
+}
+
+.surf__list .surf__item--one .surf-info {
+  @include big-desktop {
+    top: 240px;
+    left: 175px;
+  }
+}
+
+.surf__list .surf__item--eight .surf-info {
+  @include big-desktop {
+    top: 245px;
+    left: -145px;
+  }
+}
+
+.surf-cards__slider .surf-cards__slide:nth-child(2) .surf-card__descr, .surf-cards__slider .surf-cards__slide:nth-child(3) .surf-card__descr {
+  @include big-desktop {
+    width: auto;
+  }
+}

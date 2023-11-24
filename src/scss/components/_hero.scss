@@ -1,0 +1,330 @@
+.hero {
+  min-height: 1024px;
+
+  @include big-desktop {
+    min-height: 856px;
+  }
+
+  @include bg-mobile {
+    min-height: auto;
+  }
+
+  &__slider {
+    z-index: 4;
+  }
+
+  &__slide {
+    height: 1024px;
+
+    position: relative;
+
+    @include big-desktop {
+      height: 856px;
+    }
+
+    @include bg-mobile {
+      height: 660px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    object-fit: cover;
+
+    @include big-desktop {
+      height: inherit;
+    }
+  }
+
+  &__map {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    @include big-desktop {
+      width: 800px;
+    }
+
+    @include bg-mobile {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: absolute;
+
+    top: 613px;
+    right: 80px;
+
+    max-width: 515px;
+
+    @include big-desktop {
+      top: 400px;
+    }
+
+    @include medium-desktop {
+      right: 50px;
+    }
+
+    @include bg-mobile {
+      right: 20px;
+    }
+  }
+
+  &__title {
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 7.333px;
+    text-transform: uppercase;
+
+    position: relative;
+
+    margin: 0 0 5px 0;
+
+    transform: translateX(7px);
+
+    &:before {
+      position: absolute;
+      content: url(../img/hero-line.svg);
+      right: 104px;
+      top: -8px;
+
+      @include small-tablet {
+        content: url(../img/hero-line_05x.svg);
+
+        right: 84px;
+      }
+    }
+
+    &--bottom {
+      margin-bottom: 8px;
+
+      &:before {
+        position: absolute;
+        content: url(../img/hero-line.svg);
+        right: 200px;
+        top: -7px;
+
+        @include small-tablet {
+          content: url(../img/hero-line_05x.svg);
+
+          right: 174px;
+        }
+      }
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+  }
+
+  &__descr {
+    color: var(--light-color);
+    text-align: right;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 113px;
+    text-transform: uppercase;
+
+    display: block;
+
+    margin-bottom: 31px;
+
+    &--bottom {
+      font-size: 40px;
+
+      margin-bottom: 10px;
+
+      line-height: 67px;
+
+      @include big-desktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    @include medium-desktop {
+      margin-bottom: 15px;
+    }
+
+    @include small-tablet {
+      font-size: 64px;
+    }
+
+    @include bg-mobile {
+      font-size: 44px;
+      line-height: 60px;
+    }
+  }
+
+  &__bottom-content {
+    width: 100%;
+
+    padding-left: 209px;
+    padding-right: 80px;
+
+    box-sizing: border-box;
+
+    position: absolute;
+
+    bottom: 21px;
+
+    justify-content: space-between;
+
+    @include medium-desktop {
+      padding-right: 54px;
+    }
+
+    @include tablet {
+      padding-left: 190px;
+    }
+
+    @include small-tablet {
+      padding: 0;
+
+      justify-content: center;
+    }
+  }
+}
+
+.hero-navigation {
+  position: absolute;
+
+  &__top {
+    right: 80px;
+    top: 40px;
+
+    gap: 20px;
+
+    z-index: 1;
+
+    @include medium-desktop {
+      right: 50px;
+    }
+
+    @include bg-mobile {
+      right: 20px;
+    }
+  }
+
+  &__middle {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+
+  &__bottom {
+    position: static;
+
+    @include bg-mobile {
+      display: none;
+    }
+  }
+
+  &__list {
+    gap: 40px;
+
+    transform: translate(1px, -13px);
+  }
+
+  &__item {
+    min-width: 200px;
+
+    color: var(--light-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 87px;
+
+    padding-top: 3px;
+
+    box-sizing: border-box;
+
+    border-top: 4px solid var(--light-color);
+
+    cursor: pointer;
+
+    &--active {
+      border-top-color: var(--aquamarine-color);
+    }
+
+    @include medium-desktop {
+      min-width: 0;
+      max-width: 160px;
+
+      gap: 50px;
+    }
+  }
+
+  &__num {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 34px;
+    text-transform: uppercase;
+
+    @include medium-desktop {
+      font-size: 20px;
+    }
+  }
+
+  &__descr {
+    text-align: right;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+
+    white-space: nowrap;
+  }
+}
+
+.btn-down {
+  width: 20px;
+  height: 24px;
+
+  @include small-tablet {
+    display: none;
+  }
+
+  &__icon {
+    display: block;
+
+    width: 20px;
+    height: 24px;
+
+    fill: var(--light-color);
+
+    cursor: pointer;
+
+    @include medium-desktop {
+      width: 16px;
+      height: 20px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include hover {
+    opacity: .75;
+  }
+
+  &:active {
+    background-color: var(--active-color);
+  }
+
+  @include medium-desktop {
+    width: 16px;
+    height: 20px;
+  }
+}
+
+.btn-down.focus-visible {
+  outline: 1px solid var(--aquamarine-color);
+  outline-offset: 3px;
+}

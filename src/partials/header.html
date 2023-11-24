@@ -1,0 +1,56 @@
+<header class="header">
+  <div class="header__container flex-column">
+    <a class="header__logo">
+      <img src="img/logo.svg" alt="Go Surf Logo" width="44" height="255">
+    </a>
+
+    <nav class="nav" title="Main navigation" data-menu enable-scroll>
+      <ul class="list-reset nav__list flex-column">
+        <li class="nav__item">
+          <a href="#surf" class="nav__link" data-scroll>
+            <img src="img/surf.svg" alt="Surf icon" class="nav__image" width="59" height="46">
+            <span class="nav__descr">Surf</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#travel" class="nav__link" data-scroll>
+            <img src="img/travel.svg" alt="Travel icon" class="nav__image" width="50" height="32">
+            <span class="nav__descr">Travel</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#sleep" class="nav__link" data-scroll>
+            <img src="img/camp.svg" alt="Sleep icon" class="nav__image" width="39" height="40">
+            <span class="nav__descr">Sleep</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#shop" class="nav__link" data-scroll>
+            <img src="img/shop.svg" alt="Shop icon" class="nav__image" width="16" height="44">
+            <span class="nav__descr">Shop</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="header__search"></button>
+
+    <div class="header__date flex-column">
+      <time datetime="2018-06-20" class="header__time header__time--day"><span class="header__day" id="dayNum"></span></time>
+      <time datetime="2018-06-20" class="header__time header__time--bottom"><span class="header__month-year" id="monthNum"></span><span class="header__dash">|</span> <span class="header__month-year" id="yearNum"></span></time>
+    </div>
+
+    <address class="header__address">California</address>
+  </div>
+</header>
+
+<script>
+  let date = new Date();
+  let dayNum = date.getDate();
+  let monthNum = date.getMonth();
+  let yearNum = date.getFullYear();
+
+  document.getElementById('dayNum').innerHTML = dayNum;
+  document.getElementById('monthNum').innerHTML = monthNum;
+  document.getElementById('yearNum').innerHTML = yearNum;
+</script>

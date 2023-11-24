@@ -1,0 +1,100 @@
+.nav {
+  margin-bottom: 38px;
+
+  @include small-tablet {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 40%;
+    height: 100vh;
+
+    z-index: 50;
+
+    background-color: #2a2b2b;
+
+    overflow-y: auto;
+
+    visibility: hidden;
+
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  &__list {
+    gap: 37px;
+
+    @include big-desktop {
+      gap: 30px;
+    }
+
+    @include small-tablet {
+      height: 100%;
+
+      justify-content: space-between;
+
+      padding: 90px 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    transition: .3s ease-in-out opacity;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      opacity: .75;
+    }
+
+    &:active {
+      background-color: var(--active-color);
+    }
+  }
+
+  &__image {
+    @include big-desktop {
+      width: 49px;
+    }
+
+    @include small-tablet {
+      width: 60%;
+
+      height: 40px;
+
+      object-fit: contain;
+    }
+  }
+
+  &__descr {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 3px;
+  }
+}
+
+.nav__list .nav__item:last-child .nav__image {
+  @include big-desktop {
+    width: 16px;
+  }
+}
+
+.nav__link.focus-visible {
+  outline: 1px solid var(--aquamarine-color);
+  outline-offset: 3px;
+}
+
+.nav.menu--active {
+  visibility: visible;
+  transform: none;
+}
